@@ -4,8 +4,8 @@ RUN mkdir C:\site
 
 RUN powershell -NoProfile -Command \
     Import-module IISAdministration; \
-    New-IISSite -Name "Site" -PhysicalPath C:\site -BindingInformation "*:80:"
+    New-IISSite -Name "Site" -PhysicalPath C:\site -BindingInformation "*:8000:"
 
-EXPOSE 80
+EXPOSE 8000
 
 ADD content/ /site
